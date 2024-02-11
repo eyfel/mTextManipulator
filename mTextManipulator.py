@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import filedialog
 import ezdxf
 import os
 
@@ -33,7 +32,7 @@ def add_codes_to_dxf(file_path, search_text, title_prefix, start_code_str):
 
 
 def open_file():
-    file_path = filedialog.askopenfilename(filetypes=[("DXF Files", "*.dxf")])
+    file_path = tk.filedialog.askopenfilename(filetypes=[("DXF Files", "*.dxf")])
     if file_path:
         file_path_label.config(text=file_path)
         return file_path
