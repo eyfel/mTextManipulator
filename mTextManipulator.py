@@ -1,7 +1,6 @@
 import tkinter as tk
-import ezdxf
-import os
-
+from ezdxf import readfile
+from os.path import basename
 
 def number_incrementer(number_str):
     incremented_number = int(number_str) + 1
@@ -10,7 +9,7 @@ def number_incrementer(number_str):
 
 def add_codes_to_dxf(file_path, search_text, title_prefix, start_code_str):
     try:
-        doc = ezdxf.readfile(file_path)
+        doc = readfile(file_path)
     except Exception as e:
         print(f"Error: {e}")
         return
