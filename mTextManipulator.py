@@ -25,10 +25,9 @@ def add_codes_to_dxf(file_path, search_text, title_prefix, start_code_str):
             mtext.text = f"{mtext.text}\n{new_code}"
             code_number_str = number_incrementer(code_number_str)
 
-    # Dosya adını al ve yeni dosya adı oluştur
-    file_name = os.path.basename(file_path)  # Mevcut dosyanın adını al
-    new_file_name = file_name.replace('.dxf', '_modified.dxf')  # Yeni dosya adını oluştur
-    doc.saveas(new_file_name)  # Mevcut çalışma dizinine kaydet
+    file_name = os.path.basename(file_path)
+    new_file_name = file_name.replace('.dxf', '_modified.dxf')
+    doc.saveas(new_file_name)
     print(f"Changes saved: {new_file_name}")
     return new_file_name
 
