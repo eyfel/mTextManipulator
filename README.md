@@ -21,7 +21,7 @@ Upon launching the mTextManipulator, users are greeted with a simple and intuiti
 
 - **Search Text Example**: 'MATERIAL'
 - **Title Prefix Example**: 'CODE: HNS-01-'
-- **Start Number Example**: '009'
+- **Start Number Example**: '1'
 
 These examples are provided to assist users in understanding the format and types of inputs expected by the application, ensuring a smooth and efficient user experience.
 
