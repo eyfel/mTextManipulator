@@ -1,6 +1,8 @@
 import tkinter as tk
 from ezdxf import readfile
 from os.path import basename
+from tkinter import filedialog
+
 
 def number_incrementer(number_str):
     incremented_number = int(number_str) + 1
@@ -23,7 +25,7 @@ def add_codes_to_dxf(file_path, search_text, title_prefix, start_code_str):
             mtext.text = f"{mtext.text}\n{new_code}"
             code_number_str = number_incrementer(code_number_str)
 
-    file_name = os.path.basename(file_path)
+    file_name = basename(file_path)
     new_file_name = file_name.replace('.dxf', '_modified.dxf')
     doc.saveas(new_file_name)
     print(f"Changes saved: {new_file_name}")
@@ -31,7 +33,7 @@ def add_codes_to_dxf(file_path, search_text, title_prefix, start_code_str):
 
 
 def open_file():
-    file_path = tk.filedialog.askopenfilename(filetypes=[("DXF Files", "*.dxf")])
+    file_path = filedialog.askopenfilename(filetypes=[("DXF Files", "*.dxf")])
     if file_path:
         file_path_label.config(text=file_path)
         return file_path
